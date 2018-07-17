@@ -1,0 +1,820 @@
+<script src="https://unpkg.com/vue"></script>
+
+    <style>
+    div{ font-size : 20px;
+     color: gold;
+     text-align : center;
+     font-weight : bold;
+  
+ background-image: url("hp2.png");
+     
+     
+
+
+         }
+     button {
+    background-color: blue;/*#008CBA Green */
+    border: none;
+    color: gold;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight : bold;
+  }
+
+
+    </style>
+
+    <div id="app2">
+<p>{{ message }}</p>
+   <p>{{ message1}}</p>
+<br/>
+<button v-on:click="question1"> START  </button>
+<br/>
+<br/>
+{{ finalquestion }}
+<br/>
+<br/>
+<button1 v-bind:stateyes=stateyes2 v-on:enlarge="questionmet1"></button1>
+<br/>
+<button2 v-bind:stateyes=stateyes2 v-on:enlarge="questionmet11"></button2>
+<br/>
+
+{{ finalanswer }}
+</div>
+
+
+<script>
+
+Vue.component('button1',{
+data:{},
+props:['stateyes',],
+template:`<div class="button1">
+          <button v-if=stateyes v-on:click="$emit('enlarge')">Yes</button>
+          </div>`
+
+})
+
+Vue.component('button2',{
+data:{},
+props:['stateyes',],
+template:`<div class="button2">
+          <button v-if=stateyes v-on:click="$emit('enlarge')">No</button>
+          </div>`
+
+})
+
+
+
+
+var new6= new Vue({
+
+el:'#app2',
+data:{
+
+message: "Hello, let me guess your favourite Harry Potter character!! You need to answer the following questions for this",
+ message1: "So let's begin :)",
+
+
+finalquestion:"",
+finalanswer:"",
+
+questionmet1:"",
+
+questionmet11:"",
+stateyes2:false,
+
+femle1 :"",
+femle2 :"",
+femle3 :"",
+femle4 :"",
+femle5 :"",
+femle6 :"",
+femle7 :"",
+femle8 :"",
+femle9 :"",
+femle10 :"",
+femle11 :"",
+femle12 :"",
+femle13 :"",
+femle14 :"",
+femle15 :"",
+femle16 :"",
+femle17 :"",
+femlestatus3: false,
+
+femlestatus2: false,
+
+femlestatus1: false,
+
+femlestatus4: false,
+
+femlestatus5: false,
+
+femlestatus6: false,
+
+femlestatus7: false,
+
+femlestatus8: false,
+
+femlestatus9: false,
+
+femlestatus10: false,
+
+femlestatus11: false,
+
+femlestatus12: false,
+
+femlestatus13: false,
+
+femlestatus14: false,
+
+femlestatus15: false,
+
+femlestatus16: false,
+
+femlestatus17: false,
+
+
+questn1 : "",
+status1 : false,
+questn12 : "",
+questn20 : "",
+status2 : false,
+questn13 : "",
+status3 : false,
+questn14 : "",
+status4 : false,
+
+nquestn14 : "",
+nquestn13 : "",
+nquestn15 : "",
+nquestn16 : "",
+nstatus4 : false,
+nstatus5 :false,
+nstatus6 : false,
+nstatus7 : false,
+nstatus3 : false,
+
+status10 : false,
+nquestn26 : "",
+nquestn25 : "",
+nquestn24 : "",
+nstatus24 : false,
+nstatus25 : false,
+nstatus26 : false,
+nquestn28 : "",
+nquestn29 : "",
+nstatus28 : false,
+nstatus29 : false,
+nstatus9 : false,
+
+goodold1 : "",
+goodold2 : "",
+goodold3 : "",
+goodold4 : "",
+goodold5 : "",
+goodold6 : "",
+goodold7 : "",
+
+statusgoodOld5 : false,
+statusgoodOld : false,
+statusgoodOld2 : false,
+
+aliveq1: "",
+aliveq2: "",
+aliveq3: "",
+aliveq5: "",
+aliveq4: "",
+aliveq6: "",
+aliveq7: "",
+
+statusalive6 : false,
+
+statusalive5 : false,
+
+statusalive4 : false,
+
+statusalive3 : false,
+
+statusalive2 : false,
+
+statusalive1 : false,
+
+aliveq17: "",
+aliveq11: "",
+aliveq12: "",
+aliveq13: "",
+aliveq14: "",
+aliveq15: "",
+aliveq16: "",
+aliveq18: "",
+
+
+statusalive11 : false,
+
+statusalive12 : false,
+
+statusalive13 : false,
+
+statusalive14 : false,
+
+statusalive15 : false,
+
+statusalive16 : false,
+
+statusalive17 : false
+},
+methods:{
+ question1 : function (event){
+this.stateyes2 =true
+
+this.questn1 = "Is your character a Male ?"
+ this.status1= true
+this.finalquestion = this.questn1
+
+this.questionmet1=this.question12
+
+this.questionmet11=this.female1
+
+},
+question12 : function(event){
+this.stateyes2 =true
+
+this.questn12 ="Does your character survive throughout the series?"
+this.status2=true
+this.finalquestion = this.questn12
+
+
+this.questionmet1=this.alive1
+
+this.questionmet11=this.nquestion13
+
+
+
+},
+
+question20 : function(event){
+this.questn20  ="Is your character a House-elf?"
+this.nstatus9  =true
+
+this.finalquestion = this.questn20
+
+
+
+this.questionmet1=this.nquestion28
+
+this.questionmet11=this.nquestion29
+
+
+},
+
+
+
+nquestion13: function(event){
+this.nquestn13 ="Is your character evil/bad?"
+this.nstatus3=true
+
+this.finalquestion = this.nquestn13
+
+
+this.questionmet1=this.nquestion14
+
+this.questionmet11=this.nquestion24
+
+},
+
+nquestion14: function(event){
+this.nquestn14 ="Is your character the darkest wizard of all time?"
+this.nstatus4=true
+
+
+
+this.finalquestion = this.nquestn14
+
+
+
+this.questionmet1=this.nquestion15
+
+this.questionmet11=this.nquestion16
+
+
+},
+
+nquestion15: function(event){
+this.nquestn15 ="Your favourite chouraracter is Lord Voldemort!"
+this.nstatus5=true
+
+this.finalanswer = this.nquestn15
+},
+
+
+nquestion16: function(event){
+this.nquestn16 ="Your favourite chouraracter is Peter Pettigrew!"
+this.nstatus6=true
+
+
+this.finalanswer = this.nquestn16
+
+},
+
+
+nquestion24: function(event){
+this.nquestn24 ="Is your character young?"
+this.nstatus24=true
+
+
+this.finalquestion = this.nquestn24
+
+
+this.questionmet1=this.nquestion25
+
+this.questionmet11=this.goodOld
+
+
+
+},
+
+nquestion25: function(event){
+this.nquestn25 ="Is your character twin?"
+this.nstatus25=true
+
+
+this.finalquestion = this.nquestn25
+
+
+this.questionmet1=this.nquestion26
+
+this.questionmet11=this.question20
+
+
+},
+
+nquestion26: function(event){
+this.nquestn26 ="Your favourite character is Fred Weasley!"
+this.nstatus26=true
+
+
+this.finalanswer = this.nquestn26
+},
+
+nquestion28: function(event){
+this.nquestn28 ="Your favourite character is Dobby!"
+this.nstatus28=true
+
+
+this.finalanswer = this.nquestn28
+},
+
+
+nquestion29:  function(event){
+this.nquestn29 ="Your favourite character is Cedric Diggory!"
+this.nstatus29=true
+
+
+this.finalanswer = this.nquestn29
+},
+
+goodOld:  function(event){
+this.goodold1 ="Was your character a Professor/HeadMaster in Hogwarts?"
+this.statusgoodOld=true
+
+
+this.finalquestion = this.goodold1
+
+
+this.questionmet1=this.goodOld2
+
+this.questionmet11=this.goodOld3
+
+
+},
+
+goodOld2:  function(event){
+this.goodold2 ="Was your character teaching Portions subject Hogwarts?"
+this.statusgoodOld2 =true
+
+
+this.finalquestion = this.goodold2
+
+
+
+
+this.questionmet1=this.goodOld4
+
+this.questionmet11=this.goodOld5
+
+},
+
+
+goodOld3:  function(event){
+this.goodold3 ="Your favourite character is Sirius Black!"
+this.statusgoodOld3 =true
+
+
+this.finalquestion = this.goodold3
+
+},
+
+
+goodOld4:  function(event){
+this.goodold4 ="Your favourite character is Severus Snape!"
+this.statusgoodOld4 =true
+
+
+this.finalanswer = this.goodold4
+
+},
+
+
+goodOld5:  function(event){
+this.goodold5 ="Was your favourite character teaching Defence Against the DarkArts subject anytime?"
+this.statusgoodOld5 =true
+
+this.finalquestion = this.goodold5
+
+this.questionmet1=this.goodOld6
+
+this.questionmet11=this.goodOld7
+
+},
+
+goodOld6:  function(event){
+this.goodold6 ="Your favourite character is Remus Lupin!"
+this.statusgoodOld5 =true
+
+this.finalanswer = this.goodold6
+
+
+},
+
+goodOld7:  function(event){
+this.goodold7 ="Your favourite character is Albus Dumbledore!"
+this.statusgoodOld5 =true
+
+
+this.finalanswer = this.goodold7
+},
+
+alive1:  function(event){
+this.aliveq1 ="Is your character from Weasley family?"
+this.statusalive1 =true
+this.finalquestion = this.aliveq1
+
+
+this.questionmet1=this.alive2
+
+this.questionmet11=this.alive11
+
+
+},
+
+alive2:  function(event){
+this.aliveq2 ="Is your character the main character's best friend?"
+this.statusalive2 =true
+
+
+this.finalquestion = this.aliveq2
+
+
+
+this.questionmet1=this.alive5
+
+this.questionmet11=this.alive3
+
+},
+
+
+alive3:  function(event){
+this.aliveq3 ="Is your character a twin?"
+this.statusalive3 =true
+
+
+this.finalquestion = this.aliveq3
+
+
+
+this.questionmet1=this.alive4
+
+this.questionmet11=this.alive6
+
+
+},
+
+alive4:  function(event){
+this.aliveq4 ="Your favourite character is George Weasley!"
+this.statusalive4 =true
+
+
+this.finalanswer = this.aliveq4
+},
+
+alive5:  function(event){
+this.aliveq5 ="Your favourite character is Ron Weasley!"
+this.statusalive5 =true
+
+
+this.finalanswer = this.aliveq5
+},
+
+alive6:  function(event){
+this.aliveq6 ="Your favourite character is Arthur Weasley!"
+this.statusalive6 =true
+
+this.finalanswer = this.aliveq6
+
+},
+
+alive11: function(event){
+this.aliveq11 ="Does your character have a scar on forehead?"
+this.statusalive11 =true
+
+
+this.finalquestion = this.aliveq11
+
+
+this.questionmet1=this.alive12
+
+this.questionmet11=this.alive13
+},
+
+alive12: function(event){
+this.aliveq12 ="Your favourite character is Harry Potter!"
+this.statusalive12 =true
+
+
+this.finalanswer = this.aliveq12
+},
+
+alive13: function(event){
+this.aliveq13 ="Is your favourite character old ?"
+this.statusalive13 =true
+
+
+this.finalquestion = this.aliveq13
+
+
+
+this.questionmet1=this.alive14
+
+this.questionmet11=this.alive15
+
+},
+
+alive14: function(event){
+this.aliveq14 ="Your favourite character is Hagrid!"
+this.statusalive14 =true
+
+this.finalanswer = this.aliveq14
+},
+
+alive15: function(event){
+this.aliveq15 ="Is your favourite character from Slytherin House ?"
+this.statusalive15 =true
+
+
+this.finalquestion = this.aliveq15
+
+
+this.questionmet1=this.alive16
+
+this.questionmet11=this.alive17
+},
+
+alive16: function(event){
+this.aliveq16 ="Your favourite character is Draco Malfoy!"
+this.statusalive16 =true
+
+
+this.finalanswer = this.aliveq16
+},
+
+alive17: function(event){
+this.aliveq17 ="Your favourite character is Neville Longbottom!"
+this.statusalive17 =true
+
+
+this.finalanswer = this.aliveq17
+},
+
+female1:function(event){
+this.femle1 = "Does your character survive throughout the series?"
+this.femlestatus1 = true
+this.finalquestion = this.femle1
+
+
+
+this.questionmet1=this.female5
+
+this.questionmet11=this.female2
+},
+
+
+female2:function(event){
+this.femle2 = "Is your character evil/bad?"
+this.femlestatus2 = true
+
+this.finalquestion = this.femle2
+
+
+
+this.questionmet1=this.female3
+
+this.questionmet11=this.female4
+
+},
+
+
+female3:function(event){
+this.femle3 = "Your favourite character is Bellatrix!"
+this.femlestatus3= true
+
+
+this.finalanswer = this.femle3
+},
+
+female4:function(event){
+this.femle4 = "Your favourite character is Moarning Myrtle!"
+this.femlestatus3= true
+
+
+this.finalanswer = this.femle4
+},
+
+
+female5:function(event){
+this.femle5 = "Is your character young?"
+this.femlestatus5= true
+
+this.finalquestion = this.femle5
+
+
+this.questionmet1=this.female6
+
+this.questionmet11=this.female7
+
+},
+
+
+
+female7:function(event){
+this.femle7 = "Is your character a Professor in Hogwarts?"
+this.femlestatus7= true
+
+
+this.finalquestion = this.femle7
+
+
+this.questionmet1=this.female8
+
+this.questionmet11=this.female9
+
+
+
+},
+
+
+female8:function(event){
+this.femle8 = "Your favourite character is Professor Minerva"
+this.femlestatus7= true
+
+
+this.finalanswer = this.femle8
+
+},
+
+
+
+female9:function(event){
+this.femle9 = "Your favourite character is Molly Weasley"
+this.femlestatus7= true
+
+
+this.finalanswer = this.femle9
+},
+
+
+female6:function(event){
+this.femle6 = "Does your character appear in all the books/movies?"
+this.femlestatus6= true
+
+
+this.finalquestion = this.femle6
+
+
+this.questionmet1=this.female10
+
+this.questionmet11=this.female13
+},
+
+
+
+female10:function(event){
+this.femle10 = "Is your character known for her Intelligence and smartness?"
+this.femlestatus10= true
+
+
+this.finalquestion = this.femle10
+
+
+this.questionmet1=this.female11
+
+this.questionmet11=this.female12
+
+
+},
+
+
+
+female11:function(event){
+this.femle11= "Your favourite character is Hermoine Granger!"
+this.femlestatus11= true
+
+
+this.finalanswer = this.femle11
+},
+
+
+female12:function(event){
+this.femle12= "Your favourite character is Ginny Weasley!"
+this.femlestatus12= true
+
+
+this.finalanswer = this.femle12
+},
+
+
+
+female13:function(event){
+this.femle13= "Is your character Asian?"
+this.femlestatus13= true
+
+
+this.finalquestion = this.femle13
+
+
+this.questionmet1=this.female14
+
+this.questionmet11=this.female15
+
+},
+
+
+
+female14:function(event){
+this.femle14= "Your favourite character is Cho Chang!"
+this.femlestatus14= true
+
+
+this.finalanswer = this.femle14
+
+},
+
+
+
+female15:function(event){
+this.femle15= "Is your favourite character known for her eccentric characte?"
+this.femlestatus15= true
+
+this.finalquestion = this.femle15
+
+
+this.questionmet1=this.female16
+
+this.questionmet11=this.female17
+
+
+
+},
+
+
+female16:function(event){
+this.femle16= "Your favourite character is Luna Lovegood!"
+this.femlestatus16= true
+
+this.finalanswer = this.femle16
+
+},
+
+
+
+female17:function(event){
+this.femle17= "Your favourite character is Fleur Delacour"
+this.femlestatus17= true
+
+
+this.finalanswer = this.femle17
+},
+
+
+
+
+}
+
+
+})
+
+</script>
+
